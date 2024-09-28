@@ -1,6 +1,8 @@
 import React from 'react';
+
 import { Link } from 'react-router-dom';
-import cute_dino from './assets/dino.jpeg';
+import cute_dino from './assets/stegosaurus-transparent.png';
+import sneaky_dino from './assets/tenor.gif';
 import './App.css'
 
 function HomePage() {
@@ -30,6 +32,7 @@ function HomePage() {
 				<div className='welcome'>
 					<h1>Welcome to Dino Mail!</h1>
 					<p>Dino Mail protects your privacy by providing you a temporary email. If you want to delete an email address, simply click the “extinct” button. </p>
+					<img src={sneaky_dino} alt="Sneaky Dinosaur"/>
 				</div>
 			</main>
 		</div>
