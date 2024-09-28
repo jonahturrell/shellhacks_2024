@@ -10,7 +10,7 @@ echo "$username ALL=(ALL) NOPASSWD: /usagescripts/createuser.sh, /usagescripts/d
 # Install Express
 apt install nodejs npm -y
 cd /home/$username
-npm install --prefix /home/$username express
+npm install --prefix /home/$username express imap-simple mailparser
 
 # Add server script to systemctl
 

@@ -1,5 +1,7 @@
 const express = require('express');
 const { exec } = require('child_process');
+const imaps = require('imap-simple');
+const { simpleParser } = require('mailparser');
 const app = express();
 const port = 3001;
 
