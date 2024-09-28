@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import cute_dino from './assets/stegosaurus-transparent.png';
 import sneaky_dino from './assets/tenor.gif';
 import './App.css'
@@ -20,7 +21,9 @@ function HomePage() {
 				</nav>
 				<div className='auth-buttons'>
 					<button className='btn signUp'>Sign Up</button>
-					<button className='btn login'>Log In</button>
+					<Link to="/login">
+						<button className='btn login'>Log In</button>
+					</Link>
 				</div>
 			</header>
 
