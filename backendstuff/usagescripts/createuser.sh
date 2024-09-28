@@ -11,4 +11,4 @@ useradd -m -G mail $username
 
 # Log
 date="$(date ; echo)"
-echo "Created user $username at $date" >> log.txt
+echo "$date - Created mail user $username" >> log.txt

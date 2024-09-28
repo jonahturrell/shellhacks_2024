@@ -4,4 +4,4 @@ echo ""
 
 # Log
 date="$(date ; echo)"
-echo "Deleted user $1 at $date" >> log.txt
+echo "$date - Deleted user $1" >> log.txt
