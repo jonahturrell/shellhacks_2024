@@ -1,4 +1,4 @@
-deluser $1
+deluser --quiet $1
 
 # Log
 date="$(date ; echo)"
