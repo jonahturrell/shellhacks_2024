@@ -1,5 +1,5 @@
 import React from 'react';
-import cute_dino from './assets/cute_dino.jpeg';
+import cute_dino from './assets/dino.jpeg';
 import './App.css'
 
 function HomePage() {
@@ -18,7 +18,7 @@ function HomePage() {
 					</ul>
 				</nav>
 				<div className='auth-buttons'>
-					<button className='btn signup'>Sign Up</button>
+					<button className='btn signUp'>Sign Up</button>
 					<button className='btn login'>Log In</button>
 				</div>
 			</header>
@@ -26,7 +26,7 @@ function HomePage() {
 			<main>
 				<div className='welcome'>
 					<h1>Welcome to Dino Mail!</h1>
-					<p>testing testing por favor</p>
+					<p>Dino Mail protects your privacy by providing you a temporary email. If you want to delete an email address, simply click the “extinct” button. </p>
 				</div>
 			</main>
 		</div>

@@ -13,6 +13,7 @@ html, body {
 .page-container {
   display: flex;
   flex-direction: column;
+  text-align: center;
   min-height: 100vh;
   min-width: 100vh;
 }
@@ -72,7 +73,7 @@ html, body {
   opacity: 0.8;
 }
 
-.signup {
+.signUp {
   background-color: #28a745;
   color: white;
 }
