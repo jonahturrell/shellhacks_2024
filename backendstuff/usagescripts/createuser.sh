@@ -11,10 +11,9 @@ useradd -MN -G mail $username
 date="$(date ; echo)"
 
 # Check that user was added successfully and log
-if [$? -ne 0] then
+if [$? -ne 0]; then
   echo "$date - Failed to create user $username" >> log.txt
   exit 1
-fi
 
-chpasswd $username:123
+echo "$username:123" | chpasswd
 echo "$date - Created mail user $username" >> log.txt
