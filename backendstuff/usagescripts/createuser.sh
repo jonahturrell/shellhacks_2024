@@ -19,4 +19,5 @@ fi
 echo "$username:123" | chpasswd
 echo "$date - Created mail user $username" >> log.txt
 
-
+# Echo output
+echo "$username"
