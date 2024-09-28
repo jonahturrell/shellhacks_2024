@@ -14,6 +14,9 @@ date="$(date ; echo)"
 if [$? -ne 0]; then
   echo "$date - Failed to create user $username" >> log.txt
   exit 1
+fi
 
 echo "$username:123" | chpasswd
 echo "$date - Created mail user $username" >> log.txt
+
+
