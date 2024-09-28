@@ -1,4 +1,4 @@
-deluser --quiet $1
+deluser $1
 
 echo ""
 
