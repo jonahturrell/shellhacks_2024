@@ -7,7 +7,7 @@ else
 
 
 fi
-useradd -m -G mail $username
+useradd -m -M -G mail $username
 
 # Log
 date="$(date ; echo)"
