@@ -20,7 +20,9 @@ function HomePage() {
 					</ul>
 				</nav>
 				<div className='auth-buttons'>
-					<button className='btn signUp'>Sign Up</button>
+					<Link to="/signup">
+						<button className='btn signUp'>Sign Up</button>
+					</Link>
 					<Link to="/login">
 						<button className='btn login'>Log In</button>
 					</Link>
