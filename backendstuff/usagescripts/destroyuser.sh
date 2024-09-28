@@ -11,10 +11,10 @@ else
 fi
 
 # Check that user exists
-if [! id "$username" &>/dev/null]; then
-  echo "$date - Tried to destroy nonexistent user $username" >> log.txt
-  exit 1
-fi
+#if [! id "$username" &>/dev/null]; then
+#  echo "$date - Tried to destroy nonexistent user $username" >> log.txt
+#  exit 1
+#fi
 
 userdel -r $1
 
