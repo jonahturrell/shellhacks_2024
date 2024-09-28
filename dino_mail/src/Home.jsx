@@ -1,5 +1,5 @@
 import React from 'react';
-import cute_dino from './assets/dino.jpeg';
+import cute_dino from './assets/stegosaurus-transparent.png';
 import sneaky_dino from './assets/tenor.gif';
 import './App.css'
 
