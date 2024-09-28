@@ -1,9 +1,16 @@
-# Install Express
-apt install express -y
+# Set up variables
+username=dinoMailuserControl
+script=serverscript.js
 
 # Set up the mail user control
-useradd -m dinoMailUserControl
-cp -r ./dinoMailUserControl/* /home/dinoMailUserControl
-echo "dinoMailUserControl ALL=(ALL) NOPASSWD: /usagescripts/createuser.sh, /usagescripts/destroyuser.sh" >> /etc/sudoers
+useradd -m $username
+cp -r ./dinoMailUserControl/* /home/$username
+echo "$username ALL=(ALL) NOPASSWD: /usagescripts/createuser.sh, /usagescripts/destroyuser.sh" >> /etc/sudoers
 
-# Add server to systemctl
+# Install Express
+apt install nodejs npm -y
+cd /home/$username
+npm install --prefix /home/$username express
+
+# Add server script to systemctl
+
