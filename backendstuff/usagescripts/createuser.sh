@@ -1,14 +1,20 @@
 #!/bin/bash
 
-if [ -n "$1" ]; then
+# Check if a username has already been input
+if [ -n "$1" ]; then 
   username="$1"
 else
   username="$(tr -dc A-Za-z0-9 </dev/urandom | head -c 13 ; echo)" # Get a random 13-character string
-
-
 fi
-useradd -m -M -G mail $username
 
-# Log
+useradd -MN -G mail $username
 date="$(date ; echo)"
-echo "$date - Created mail user $username" >> log.txt
+
+# Check that user was added successfully and log
+if [$? -ne 0] then
+  echo "$date - Failed to create user $username" >> log.txt
+  exit 1
+else
+  chpasswd $1:123
+  echo "$date - Created mail user $username" >> log.txt
+fi
