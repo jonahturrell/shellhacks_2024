@@ -7,6 +7,37 @@ const port = 3001;
 
 app.use(express.json());
 
+// Temp email creation and deletion
+app.post('/run-script', (req, res) => {
+    const scriptName = req.body.scriptName;
+    const scriptArg = req.body.scriptArg;
+
+    // Define scripts
+    const scripts = {
+        userCreate: 'usagescripts/createuser.sh',
+        userDestroy: 'usagescripts/destroyuser.sh'
+    };
+
+    const scriptPath = scripts[scriptName];
+
+    if (!scriptPath) { // Make sure a proper script name is used
+        return res.status(400).send({ error: 'Invalid script name' });
+    }
+
+    exec(`bash ${scriptPath} ${scriptArg}`, (err, stdout, stderr) => {
+        if (err) {
+            res.status(500).send({ error: err.message, stderr });
+            return;
+        }
+        res.send({ stdout: stdout.trim(), stderr });
+    });
+});
+
+app.listen(port, () => {
+    console.log(`Server listening at http://localhost:${port}`);
+});
+
+
 // Email reading functionality
 app.post('/read-emails', async (req, res) => {
     const { user, password, host, port, tls } = req.body;
@@ -28,36 +59,23 @@ app.post('/read-emails', async (req, res) => {
 
         const searchCriteria = ['UNSEEN'];
         const fetchOptions = {
-            bodies: ['HEADER.FIELDS (FROM TO SUBJECT DATE)', 'TEXT', ''],
+            bodies: ['HEADER', 'TEXT'],
             markSeen: false
         };
 
         const results = await connection.search(searchCriteria, fetchOptions);
-        
-        console.log(`Fetched ${results.length} emails`);
-
         const emails = await Promise.all(results.map(async (item) => {
-            let all = item.parts.find(part => part.which === 'TEXT');
-            
-            if (!all) {
-                all = item.parts.find(part => part.which === '');
-            }
-            
-            if (!all) {
-                console.warn('No TEXT or BODY part found in item', item);
-                return null;
-            }
-
+            const all = item.parts.find(part => part.which === 'TEXT');
             const parsed = await simpleParser(all.body);
             return {
-                subject: parsed.subject || 'Hello',
-                from: parsed.from ? parsed.from.text : 'jonah@turrell.xyz',
-                to: parsed.to ? parsed.to.text : 'ashewangda@shellhacksdinomail.xyz',
-                date: parsed.date || 'Sat, 28 Sep 2024 23:03:11 -0400',
-                text: parsed.text || 'I really hope you get this :)',
-                html: parsed.html || ''
+                subject: parsed.subject,
+                from: parsed.from.text,
+                to: parsed.to.text,
+                date: parsed.date,
+                text: parsed.text,
+                html: parsed.html
             };
-        })).then(emails => emails.filter(email => email !== null)); // Filter out null results
+        }));
 
         res.send({ emails });
         connection.end();
@@ -69,4 +87,3 @@ app.post('/read-emails', async (req, res) => {
 app.listen(port, () => {
     console.log(`Server listening at http://localhost:${port}`);
 });
-
