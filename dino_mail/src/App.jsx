@@ -13,9 +13,11 @@ function App() {
       <div className='App'>
         <Routes>
             <Route path="/" element={<HomePage />} />
+
             <Route path="/login" element={<LoginPage setIsAuthenticated={setIsAuthenticated} />} />
             <Route path="/dashboard" element={isAuthenticated ? <Dashboard /> : <Navigate to="/login" />} />
             <Route path="/signup" element={<SignUpPage />} />
+
         </Routes>
       </div>
     </Router>
