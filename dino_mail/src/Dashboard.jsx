@@ -1,4 +1,6 @@
 import React, {useState} from 'react';
+import { Link } from 'react-router-dom';
+import "./App.css";
 
 const Dashboard = () => {
   const [activeTab, setActiveTab] = useState('inbox');
@@ -17,6 +19,12 @@ const Dashboard = () => {
           <li onClick={() => setActiveTab('sent')} style={getStyle(activeTab, 'sent')}>Sent</li>
           <li onClick={() => setActiveTab('trash')} style={getStyle(activeTab, 'trash')}>Trash</li>
         </ul>
+        
+      </div>
+      <div className='mail' style={{display: 'flex'}}>
+        <Link to="/compose">
+          <button className='btn mail'>MAIL</button>
+        </Link>
       </div>
 
       <div style={{ flex: 1, padding: '20px' }}>
