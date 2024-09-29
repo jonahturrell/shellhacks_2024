@@ -1,10 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import cute_dino from './assets/stegosaurus-transparent.png';
-import sneaky_dino from './assets/tenor.gif';
 import './App.css';
+import cute_dino from './assets/stegosaurus-transparent.png';
 
-function HomePage() {
+function Services() {
   return (
     <div className='page-container'>
       <header className='navbar'>
@@ -29,16 +28,17 @@ function HomePage() {
       </header>
 
       <main>
-        <div className='welcome'>
-          <h1>Welcome to Dino Mail!</h1>
-          <p>
-            Dino Mail protects your privacy by providing you a temporary email. If you want to delete an email address, simply click the “extinct” button.
-          </p>
-          <img src={sneaky_dino} alt="Sneaky Dinosaur" />
-        </div>
+        <section className='services-section'>
+          <h1 style={{ textAlign: 'center', textDecoration: 'underline' }}>Services</h1>
+          <ul style={{ listStyleType: 'none', padding: 0, textAlign: 'center' }}>
+            <li>Create disposable email addresses</li>
+            <li>Easily delete email addresses</li>
+            <li>Send and receive messages</li>
+          </ul>
+        </section>
       </main>
     </div>
   );
 }
 
-export default HomePage;
+export default Services;

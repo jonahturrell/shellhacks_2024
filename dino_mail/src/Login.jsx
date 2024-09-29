@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import cute_dino from './assets/stegosaurus-transparent.png';
 import './App.css';
@@ -28,9 +29,9 @@ const LoginPage = ({ setIsAuthenticated }) => {
         </div>
         <nav className='nav-tabs'>
           <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#services">Services</a></li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/about">About Us</Link></li>
+            <li><Link to="/services">Services</Link></li>
           </ul>
         </nav>
       </header>
