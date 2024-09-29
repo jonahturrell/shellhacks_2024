@@ -1,15 +1,23 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import cute_dino from './assets/stegosaurus-transparent.png';
 import './App.css';
 
-function LoginPage() {
+const LoginPage = ({ setIsAuthenticated }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
-    // Handle login logic here
-    console.log('Logging in with:', { username, password });
+    
+    // Authentication check
+    if (username === 'user' && password === 'pass') {
+		setIsAuthenticated(true);
+		navigate('/dashboard');
+	} else {
+		alert('Invalid credentials');
+	}
   };
 
   return (
@@ -52,6 +60,6 @@ function LoginPage() {
       </div>
     </div>
   );
-}
+};
 
 export default LoginPage;
