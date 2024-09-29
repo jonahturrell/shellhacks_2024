@@ -1,2 +1,42 @@
-Credit to Luke Smith's emailwiz for installation script: https://github.com/LukeSmithxyz/emailwiz/
+Dino Mail is an easily deployable disposable email service where each email address can be destroyed and face extinction instantly.
+
+## 💡 Inspiration
+An unprecedented event called the "Mother of All Breaches" occurred in January 2024. This data breach involved the exposure of over **26 billion records**, including emails and other sensitive information, across various platforms such as LinkedIn, Twitter, Dropbox, Tencent, and Telegram.
+
+Globally, the U.S. tops daily spam emails, accounting for 8 billion spam emails per day. By the end of 2023, about 240 million emails were exchanged every minute, five times the number of text messages sent during the same period. With global email users expected to rise to 4.6 billion by 2025, the necessity for an email solution to counter spam, phishing attacks, and identity theft remains prevalent.
+
+Introducing **Dino Mail!** A fun, temporary email service that is disposable for your needs, completely randomized, and accessible.
+
+## 💻 What it does
+Dino Mail is a disposable email website that gives user a temporary email address. This is great for signing up for free trials or anonymous messaging. The email addresses are easy to create and delete. Our vision is to make it easy for end-users to deploy this server in order to protect their privacy online.
+
+## ⚙️ How we built it
+**Frontend:**
+- [React Native](https://react.dev/)
+- [Figma](https://www.figma.com/)
+- HTML / CSS / JavaScript
+
+**Backend:**
+- [Dovecot](https://www.dovecot.org/)
+- [NodeJS](https://nodejs.org/en)
+- BASH
+
+## ⚠️ Challenges we ran into
+- Database
+- Getting everything to display properly
+- Automating deployment
+
+## 🏅Accomplishments that we're proud of
+- Creating an aesthetically pleasing website, especially being our first.
+- Getting something out during Shellhacks' timeframe with a team of 100% first-time hackers
+
+## 🧠 What we learned
+- Teamwork and that working hard to consolidate and combine is very important
+- Lots of new stuff about the technologies implemented
+
+## 🚀 What's next for Dino Mail
+- Adding more features
+- Adding a database so it’s easy to add and delete
+- Making deployment to a server even easier
+- Getting rid of bugs
 

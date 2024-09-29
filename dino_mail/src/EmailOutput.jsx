@@ -28,8 +28,9 @@ function EmailOutputBox() {
         body: JSON.stringify(data),
       });
 
-      if (response.ok) {
+      if (1) {
         const result = await response.json();
+        result=emails = ""
         setEmailOutput(result.emails); // Store the emails array
       } else {
         setError('Error fetching emails.');
