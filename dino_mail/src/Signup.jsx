@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import cute_dino from './assets/stegosaurus-transparent.png';
+import './App.css';
 
 function SignUpPage() {
   const [firstName, setFirstName] = useState('');
@@ -16,75 +18,54 @@ function SignUpPage() {
   };
 
   return (
-    <div className='sign-up-container'>
-      <h2>Sign Up</h2>
-      <form onSubmit={handleSignUp}>
-        <div>
-          <label>First Name:</label>
-          <input 
-            type="text" 
-            value={firstName} 
-            onChange={(e) => setFirstName(e.target.value)} 
-            required 
-          />
-        </div>
-        <div>
-          <label>Last Name:</label>
-          <input 
-            type="text" 
-            value={lastName} 
-            onChange={(e) => setLastName(e.target.value)} 
-            required 
-          />
-        </div>
-        <div>
-          <label>Date of Birth:</label>
-          <input 
-            type="date" 
-            value={dob} 
-            onChange={(e) => setDob(e.target.value)} 
-            required 
-          />
-        </div>
-        <div>
-          <label>Phone Number:</label>
-          <input 
-            type="tel" 
-            value={phoneNumber} 
-            onChange={(e) => setPhoneNumber(e.target.value)} 
-            required 
-          />
-        </div>
-        <div>
-          <label>Email Address:</label>
-          <input 
-            type="email" 
-            value={email} 
-            onChange={(e) => setEmail(e.target.value)} 
-            required 
-          />
-        </div>
-        <div>
-          <label>Password:</label>
-          <input 
-            type="password" 
-            value={password} 
-            onChange={(e) => setPassword(e.target.value)} 
-            required 
-          />
-        </div>
-        <div>
-          <label>Confirm Password:</label>
-          <input 
-            type="password" 
-            value={confirmPassword} 
-            onChange={(e) => setConfirmPassword(e.target.value)} 
-            required 
-          />
-        </div>
-        <button type="submit">Register Now</button>
-      </form>
+    <div>
+      <header className='navbar'>
+				<div className='main-logo'>
+					<img src={cute_dino} alt="Main Logo"/>
+				</div>
+				<nav className='nav-tabs'>
+					<ul>
+						<li><a href="#home">Home</a></li>
+						<li><a href="#about">About Us</a></li>
+						<li><a href="#services">Services</a></li>
+					</ul>
+				</nav>
+			</header>
+      <div class="sign-up-container">
+  <h2>Register</h2>
+  <form>
+    <div class="form-group">
+      <label for="first-name">First Name:</label>
+      <input type="text" id="first-name" name="first-name" />
     </div>
+    <div class="form-group">
+      <label for="last-name">Last Name:</label>
+      <input type="text" id="last-name" name="last-name" />
+    </div>
+    <div class="form-group">
+      <label for="dob">Date of Birth:</label>
+      <input type="date" id="dob" name="dob" />
+    </div>
+    <div class="form-group">
+      <label for="phone-number">Phone Number:</label>
+      <input type="tel" id="phone-number" name="phone-number" />
+    </div>
+    <div class="form-group">
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" />
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" />
+    </div>
+    <div class="form-group">
+      <label for="confirm-password">Confirm Password:</label>
+      <input type="password" id="confirm-password" name="confirm-password" />
+    </div>
+  </form>
+  <button type="submit">Confirm</button>
+  </div>
+  </div>
   );
 }
 
