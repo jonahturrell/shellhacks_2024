@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import cute_dino from './assets/stegosaurus-transparent.png';
 import './App.css';
 
